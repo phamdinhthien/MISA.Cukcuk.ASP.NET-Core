@@ -1,0 +1,16 @@
+﻿ .table-resizable .resize-bar {
+  cursor: col-resize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0.5em;
+}
+.table-resizable th, .table-resizable td {
+  position: relative;
+}

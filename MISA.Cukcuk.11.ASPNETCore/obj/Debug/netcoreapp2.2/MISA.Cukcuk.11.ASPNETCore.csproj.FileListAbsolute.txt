@@ -1,0 +1,14 @@
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\bin\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.deps.json
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\bin\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.runtimeconfig.json
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\bin\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.runtimeconfig.dev.json
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\bin\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.dll
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\bin\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.pdb
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.csprojAssemblyReference.cache
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.csproj.CoreCompileInputs.cache
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.RazorAssemblyInfo.cache
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.RazorAssemblyInfo.cs
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.AssemblyInfoInputs.cache
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.AssemblyInfo.cs
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.RazorTargetAssemblyInfo.cache
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.dll
+C:\Users\pdthien\source\repos\MISA.Cukcuk.11.ASPNETCore\MISA.Cukcuk.11.ASPNETCore\obj\Debug\netcoreapp2.2\MISA.Cukcuk.11.ASPNETCore.pdb

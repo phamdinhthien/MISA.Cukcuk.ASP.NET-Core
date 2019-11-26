@@ -1,0 +1,111 @@
+﻿.ui-dialog .ui-dialog-title{
+    margin: 0;
+}
+.ui-draggable.ui-resizable {
+    border: none;
+    min-width: 652px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.ui-helper-clearfix.ui-draggable-handle {
+    background: #0973B9;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0.4em 0 0.5em;
+    color: white;
+    margin: 1px;
+    overflow: visible;
+    border-radius: 0;
+}
+
+.ui-button-icon-only.ui-dialog-titlebar-close {
+    font-size: 1em;
+    border-radius: 50%;
+    top: 11px;
+    z-index: 99;
+    right: 0;
+}
+
+ui-helper-clearfix.ui-draggable-handle {
+    background: #0973B9;
+    margin: -2px;
+    padding: 0.4em;
+    color: white;
+}
+
+.ui-resizable-handle.ui-resizable-n,
+.ui-resizable-handle.ui-resizable-s,
+.ui-resizable-handle.ui-resizable-e,
+.ui-resizable-handle.ui-resizable-w {
+    background: #0973B9;
+}
+
+
+.ui-resizable-handle.ui-resizable-n,
+.ui-resizable-handle.ui-resizable-s {
+    height: 5px;
+}
+.ui-resizable-handle.ui-resizable-e,
+.ui-resizable-handle.ui-resizable-w {
+    width: 5px;
+}
+
+.dialog .border-red {
+    border: 1px solid #ff0000;
+}
+
+.dialog .error-icon {
+    margin-left: 5px;
+    display: none;
+}
+
+.dialog .align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.dialog label {
+    display: inline-block;
+    min-width: 115px;
+}
+.dialog .tr.justify-content {
+    justify-content: space-between;
+}
+
+.dialog .tr {
+    margin-bottom: 0.4em;
+}
+.dialog .display-flex {
+    display: flex;
+}
+
+.dialog .long-input {
+    width: 100%
+}
+
+.dialog .form-functions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+    .dialog .form-functions div {
+        display: flex;
+    }
+    .dialog .form-functions button {
+        border: 1px solid #dddddd;
+        padding: 5px 10px;
+        margin-right: 5px;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+    }
+
+        .dialog .form-functions button img {
+            width: 16px;
+            margin-right: 5px;
+        }
+        .dialog .form-functions button:last-child {
+            margin: 0;
+        }
+
