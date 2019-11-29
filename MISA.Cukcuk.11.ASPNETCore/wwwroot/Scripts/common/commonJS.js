@@ -75,6 +75,60 @@ class CommonJS {
         });
         //---------------------------------------------------//
     }
+    /******************************************************************/
 
+    /**
+    * init form dialog
+    * */
+    static initForm() {
+        let self = this;
+        // khoi tao dialog
+        this.FormDetail = $('.dialog-add-edit-customer').dialog({
+            modal: true,
+            autoOpen: false,
+            minWidth: 652,
+            minHeight: 345
+        })
+
+        $("#Birthday").datepicker({
+            dateFormat: "dd/mm/yy"
+        });
+        $('.daypicker-btn').click(function () {
+            $("#Birthday").focus();
+        });
+
+        $('.form-btns #form-cancel-btn').click(function () {
+            self.FormDetail.dialog('close');
+        })
+    }
+    /******************************************************************/
+
+    /**
+    * check required values of input tags
+    * */
+    static checkValue() {
+        let inputs = $('input[required]');
+        $(inputs).blur(function () {
+            let val = $(this).val();
+            if (!val) {
+                $(this).addClass('border-red');
+                $(this).next().css('display', 'inline').attr('title', 'bạn chưa nhập dữ liệu');
+            } else {
+                $(this).removeClass('border-red');
+                $(this).next().css('display', 'none');
+            }
+        })
+    }
+    /******************************************************************/
+
+    /**
+     * reset style for all required inputs
+     * */
+    static resetStyleInputs() {
+        $('input').val(''); // remove all values
+        let inputs = $('input[required]');
+        inputs.next('.error-icon').css('display', 'none'); // hide icon error
+        inputs.removeClass('border-red'); // reset border
+    }
     /******************************************************************/
 }
