@@ -3,13 +3,17 @@
         this.TableID = "";
         this.EntityName = "";
     }
+
+    /**
+     * load data for table
+     * */
     loadData() {
         var self = this;
         $.getJSON("/Contents/data/data.json", function (data) {
             let rows = data[self.EntityName];
             let tbody = $(self.TableID).find('tbody');
             let ths = $(self.TableID).find('th');
-
+            tbody.html('');
             $.each(rows, function (index1, row) {
                 let tr = $(`<tr rowID=${index1}></tr>`);
                 $.each(ths, function (index2, th) {
@@ -56,6 +60,8 @@
         });
     }
 
+    /******************************************************************/
+
     /**
     * hanlde when row of table clicked
     * */
@@ -68,8 +74,8 @@
             trs.css('background', 'none'); // reset background for all tr in tbody
             $(this).css('background', '#9bc7e366'); // set background for tr which clicked
             let rowID = $(this).attr('rowID'); // get id customer
-            self.FormCustomerDetail.rowID = rowID; // set id
+            self.FormDetail.rowID = rowID; // set id
         })
+    /******************************************************************/
     }
-
 }

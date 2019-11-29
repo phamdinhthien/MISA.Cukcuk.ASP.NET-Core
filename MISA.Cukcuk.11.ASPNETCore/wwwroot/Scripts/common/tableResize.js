@@ -2,10 +2,13 @@
     tbResize();
 })
 
+/**
+ * handle when resize table
+ * */
 function tbResize() {
     var startX, startWidth, $handle, $table, pressed = false;
     
-    // mousedown
+    // mousedown event
     $('.table-resizable .resize-bar').on('mousedown', function (event) {
         /*
             $(this).parent() : td
@@ -24,14 +27,14 @@ function tbResize() {
         $table = $handle.closest('.table-resizable').addClass('resizing');
     });
 
-    // mousemove
+    // mousemove event
     $('.table-resizable th, .table-resizable td').on('mousemove', function (event) {
         if (pressed) {
             $handle.width(startWidth + (event.pageX - startX));
         }
     });
 
-    // mouseup
+    // mouseup event
     $('.table-resizable th, .table-resizable td').on('mouseup', function () {
         if (pressed) {
             $table.removeClass('resizing');
@@ -45,3 +48,5 @@ function tbResize() {
     //    $(this).find('th').css('width', '');
     //});
 }
+
+/******************************************************************/
