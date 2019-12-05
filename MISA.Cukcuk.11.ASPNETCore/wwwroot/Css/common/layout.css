@@ -487,40 +487,22 @@ body {
     position: sticky;
     top: -1px;
     z-index: 99;
-}
 
-/* 
-.content .data-table table thead tr th:nth-child(1) {
-    width: 12%;
 }
-.content .data-table table thead tr th:nth-child(2) {
-    width: 50%;
-}
-.content .data-table table thead tr th:nth-child(3) {
-    width: 10%;
-}
-.content .data-table table thead tr th:nth-child(4) {
-    width: 10%;
-}
-.content .data-table table thead tr th:nth-child(5) {
-    width: 8%;
-}
-.content .data-table table thead tr th:nth-child(6) {
-    width: 10%;
-} */
 
 .content .data-table table thead tr th {
-    padding: 4px 2px 2px 2px;
+    padding: 6px 2px 2px 2px;
 }
 
     .content .data-table table thead tr th .search {
-        display: flex;
+        width: 100%;
     }
 
         .content .data-table table thead tr th .search button {
-            width: 25px;
-            padding: 3px;
+            width: 24px;
+            height: 24px;
             border: 1px solid #DDDDDD;
+            float: left;
         }
 
 input, .change-page select {
@@ -528,14 +510,18 @@ input, .change-page select {
 }
 
 .content .data-table table thead tr th input {
-    width: 92%;
+    width: calc(100% - 34px);
     border: 1px solid #DDDDDD;
 }
 
-.content .data-table table thead tr th .title {
-    font-weight: normal;
-    margin-bottom: 5px;
+.content .data-table table thead tr th[fieldname="Is5FoodMember"] input,
+.content .data-table table thead tr th[fieldname="IsAddTo5Food"] input {
+    width: 92%;
 }
+    .content .data-table table thead tr th .title {
+        font-weight: normal;
+        margin-bottom: 5px;
+    }
 
 .content .data-table table tbody tr:hover {
     background: #9bc7e366;
@@ -543,29 +529,28 @@ input, .change-page select {
 
 .content .data-table table tbody tr td {
     max-width: 0;
-    padding: 5px;
+    padding: 0 8px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    height: 24px;
 }
 
-    .content .data-table table tbody tr td:nth-child(4),
+    .content .data-table table tbody tr td input {
+        height: auto;
+    }
+    /*.content .data-table table tbody tr td:nth-child(4),
     .content .data-table table tbody tr td:nth-child(8) {
         max-width: 0;
         min-width: 100px;
+    }*/
+    .content .change-page {
+        display: flex;
+        align-items: center;
+        padding-left: 8px;
+        border: 1px solid #dddddd;
+        border-top: none;
     }
-
-.content .data-table table tbody td.td-checkbox {
-    text-align: center;
-}
-
-.content .change-page {
-    display: flex;
-    align-items: center;
-    padding-left: 8px;
-    border: 1px solid #dddddd;
-    border-top: none;
-}
 
     .content .change-page div {
         height: 16px;
@@ -608,13 +593,11 @@ input, .change-page select {
     .content .change-page input {
         width: 40px;
     }
+
+     .content .change-page select {
+         border: 1px solid #dddddd;
+     }
 /*end content*/
-
-input, textarea {
-    border: 1px solid #DDDDDD;
-    padding-left: 8px;
-}
-
 
 /*custom select dropdown*/
 span#ui-id-3-button, span#ui-id-4-button {
@@ -636,4 +619,24 @@ span#ui-id-3-button, span#ui-id-4-button {
 a.ui-button:active, .ui-button:active,
 .ui-button.ui-state-active:hover {
     background: #0973B9;
+}
+
+/*common*/
+* {
+    outline: none;
+}
+
+input, textarea, select {
+    border: 1px solid #DDDDDD;
+    padding: 0;
+    padding-left: 8px;
+    outline: none;
+}
+
+input {
+    height: 22px;
+}
+
+button {
+    outline: none;
 }

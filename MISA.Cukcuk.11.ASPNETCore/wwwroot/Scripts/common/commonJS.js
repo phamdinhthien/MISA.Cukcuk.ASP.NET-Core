@@ -104,24 +104,6 @@ class CommonJS {
     /******************************************************************/
 
     /**
-    * check required values of input tags
-    * */
-    static checkValue() {
-        let inputs = $('input[required]');
-        $(inputs).blur(function () {
-            let val = $(this).val();
-            if (!val) {
-                $(this).addClass('border-red');
-                $(this).next().css('display', 'inline').attr('title', 'bạn chưa nhập dữ liệu');
-            } else {
-                $(this).removeClass('border-red');
-                $(this).next().css('display', 'none');
-            }
-        })
-    }
-    /******************************************************************/
-
-    /**
      * reset style for all required inputs
      * */
     static resetStyleInputs() {

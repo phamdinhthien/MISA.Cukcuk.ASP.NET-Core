@@ -10,7 +10,7 @@ class CustomerJS extends Base {
         this.loadData();
         CommonJS.initForm.call(this);
         this.initEvent();
-        CommonJS.checkValue.call(this);
+        this.checkValue.call(this);
     }
 
     /**
@@ -30,6 +30,24 @@ class CustomerJS extends Base {
         $('.add').on('click', this.add.bind(this));
         $('.update').on('click', this.update.bind(this));
         $('.reload-data').on('click', this.reloadData.bind(this));
+    }
+    /******************************************************************/
+
+    /**
+    * check required values of input tags
+    * */
+     checkValue() {
+        let inputs = $('input[required]');
+        $(inputs).blur(function () {
+            let val = $(this).val();
+            if (!val) {
+                $(this).addClass('border-red');
+                $(this).next().css('display', 'inline').attr('title', 'bạn chưa nhập dữ liệu');
+            } else {
+                $(this).removeClass('border-red');
+                $(this).next().css('display', 'none');
+            }
+        })
     }
     /******************************************************************/
 
@@ -71,6 +89,7 @@ class CustomerJS extends Base {
                 if (fieldValue != null) {
                     switch (format) {
                         case "Date":
+
                             fieldValue = CommonJS.formatStringDate(fieldValue);
                             break;
                         default:

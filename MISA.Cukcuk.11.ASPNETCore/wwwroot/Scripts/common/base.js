@@ -57,6 +57,7 @@
             $('td').append('<div class ="resize-bar"></div>');
             tbResize();
             self.clickRow();
+            self.getToolTip();
         });
     }
 
@@ -77,5 +78,18 @@
             self.FormDetail.rowID = rowID; // set id
         })
     /******************************************************************/
+    }
+
+    /**
+     * get tooltip when text in 'td' tag is hidden
+     * */
+    getToolTip() {
+        $('td').bind('mouseenter', function () {
+            var $this = $(this);
+
+            if (this.offsetWidth < this.scrollWidth && !$this.attr('title')) {
+                $this.attr('title', $this.text());
+            }
+        });
     }
 }
