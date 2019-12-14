@@ -182,11 +182,7 @@ body {
 
     .header .header-left .filter select,
     .header .header-right .language select {
-        width: 175px;
-        height: 30px;
-        background: #005081;
-        color: white;
-        border: none;
+        display: none;
     }
 
         .header .header-left .filter select option,
@@ -487,7 +483,6 @@ body {
     position: sticky;
     top: -1px;
     z-index: 99;
-
 }
 
 .content .data-table table thead tr th {
@@ -518,13 +513,18 @@ input, .change-page select {
 .content .data-table table thead tr th[fieldname="IsAddTo5Food"] input {
     width: 92%;
 }
-    .content .data-table table thead tr th .title {
-        font-weight: normal;
-        margin-bottom: 5px;
-    }
+
+.content .data-table table thead tr th .title {
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.content .data-table table{
+    border: none;
+}
 
 .content .data-table table tbody tr:hover {
-    background: #9bc7e366;
+    background: #9bc7e366 !important;
 }
 
 .content .data-table table tbody tr td {
@@ -539,18 +539,18 @@ input, .change-page select {
     .content .data-table table tbody tr td input {
         height: auto;
     }
-    /*.content .data-table table tbody tr td:nth-child(4),
+/*.content .data-table table tbody tr td:nth-child(4),
     .content .data-table table tbody tr td:nth-child(8) {
         max-width: 0;
         min-width: 100px;
     }*/
-    .content .change-page {
-        display: flex;
-        align-items: center;
-        padding-left: 8px;
-        border: 1px solid #dddddd;
-        border-top: none;
-    }
+.content .change-page {
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    border: 1px solid #dddddd;
+    border-top: none;
+}
 
     .content .change-page div {
         height: 16px;
@@ -594,16 +594,19 @@ input, .change-page select {
         width: 40px;
     }
 
-     .content .change-page select {
-         border: 1px solid #dddddd;
-     }
+    .content .change-page select {
+        border: 1px solid #dddddd;
+    }
 /*end content*/
 
 /*custom select dropdown*/
-span#ui-id-3-button, span#ui-id-4-button {
-    width: 175px;
+.ui-selectmenu-button.ui-button {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 160px;
     height: 20px;
-    line-height: 20px;
     background: #005081;
     color: white;
     border: none;
@@ -616,14 +619,22 @@ span#ui-id-3-button, span#ui-id-4-button {
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active,
-a.ui-button:active, .ui-button:active,
 .ui-button.ui-state-active:hover {
     background: #0973B9;
 }
 
+span.ui-selectmenu-icon.ui-icon.ui-icon-triangle-1-s {
+    background: url("/Contents/icons/default-small-arrow.png");
+}
+
+/*end custom select dropdown*/
 /*common*/
 * {
     outline: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 input, textarea, select {
@@ -639,4 +650,62 @@ input {
 
 button {
     outline: none;
+}
+
+.layer {
+    content: '';
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*icon loading*/
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+    .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid #fff;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #fff transparent transparent transparent;
+    }
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

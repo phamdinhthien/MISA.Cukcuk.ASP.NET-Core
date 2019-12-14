@@ -1,6 +1,7 @@
-﻿.ui-dialog .ui-dialog-title{
+﻿.ui-dialog .ui-dialog-title {
     margin: 0;
 }
+
 .ui-draggable.ui-resizable {
     border: none;
     /*min-width: 652px;*/
@@ -8,13 +9,9 @@
     border-radius: 5px;
     overflow: hidden;
 }
+
 .ui-helper-clearfix.ui-draggable-handle {
     background: #0973B9;
-}
-
-.ui-dialog .dialog {
-    /*min-width: 632px;*/
-    min-height: 295px !important;
 }
 
 .ui-dialog .ui-dialog-titlebar {
@@ -25,7 +22,7 @@
     border-radius: 0;
 }
 
-.ui-dialog .ui-dialog-content{
+.ui-dialog .ui-dialog-content {
     padding: 0;
     margin: 10px;
 }
@@ -57,53 +54,69 @@ ui-helper-clearfix.ui-draggable-handle {
 .ui-resizable-handle.ui-resizable-s {
     height: 5px;
 }
+
 .ui-resizable-handle.ui-resizable-e,
 .ui-resizable-handle.ui-resizable-w {
     width: 5px;
 }
 
-.dialog .border-red {
-    border: 1px solid #ff0000;
-}
-
-.dialog .error-icon {
-    margin-left: 5px;
+.dialog {
     display: none;
+    position: relative;
 }
 
-.dialog .align-items-center {
-    display: flex;
-    align-items: center;
-}
+    .dialog .border-red {
+        border: 1px solid #ff0000;
+    }
 
-.dialog label {
-    display: inline-block;
-    min-width: 115px;
-}
-.dialog .tr.justify-content {
-    justify-content: space-between;
-}
+    .dialog .tr .td {
+        position: relative;
+    }
 
-.dialog .tr {
-    margin-bottom: 0.4em;
-}
-.dialog .display-flex {
-    display: flex;
-}
+    .dialog .error-icon {
+        position: absolute;
+        right: 4px;
+        margin-left: 5px;
+        display: none;
+    }
 
-.dialog .long-input {
-    width: 100%
-}
+    .dialog .align-items-center {
+        display: flex;
+        align-items: center;
+    }
 
-.dialog .form-btns {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-}
-    .dialog .form-btns div {
+    .dialog label {
+        display: inline-block;
+        min-width: 115px;
+    }
+
+    .dialog .tr.justify-content {
+        justify-content: space-between;
+    }
+
+    .dialog .tr {
+        margin-bottom: 0.4em;
+    }
+
+    .dialog .display-flex {
         display: flex;
     }
-    .dialog .form-btns button {
+
+    .dialog .long-input {
+        width: 100%
+    }
+
+    .dialog .form-addSave-btns {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+        .dialog .form-addSave-btns div {
+            display: flex;
+        }
+
+    .dialog button {
         border: 1px solid #dddddd;
         padding: 5px 10px;
         margin-right: 5px;
@@ -112,13 +125,31 @@ ui-helper-clearfix.ui-draggable-handle {
         align-items: center;
     }
 
-        .dialog .form-btns button img {
+        .dialog button img, .dialog s button img {
             width: 16px;
             margin-right: 5px;
         }
-        .dialog .form-btns button:last-child {
-            margin: 0;
-        }
+
+    .dialog .form-addSave-btns button:last-child {
+        margin: 0;
+    }
+
+    .dialog .form-alert-btns {
+        position: absolute;
+        display: flex;
+        right: 0;
+        bottom: 0;
+    }
+
+.dialog-delete-title {
+    display: flex;
+    align-items: center;
+}
+
+    .dialog-delete-title img {
+        margin-right: 5px;
+        height: 30px;
+    }
 
 .ui-widget-overlay.ui-front {
     background: black !important;

@@ -7,7 +7,7 @@ class CustomerJS extends Base {
     constructor() {
         super();
         this.init();
-        this.loadData();
+        this.loadData(true);
         CommonJS.initForm.call(this);
         this.initEvent();
         this.checkValue.call(this);
@@ -29,6 +29,8 @@ class CustomerJS extends Base {
     initEvent() {
         $('.add').on('click', this.add.bind(this));
         $('.update').on('click', this.update.bind(this));
+        $('.delete').on('click', this.delete.bind(this));
+        $('.form-save-btn').on('click', this.save.bind(this));
         $('.reload-data').on('click', this.reloadData.bind(this));
     }
     /******************************************************************/
@@ -36,7 +38,7 @@ class CustomerJS extends Base {
     /**
     * check required values of input tags
     * */
-     checkValue() {
+    checkValue() {
         let inputs = $('input[required]');
         $(inputs).blur(function () {
             let val = $(this).val();
@@ -56,10 +58,9 @@ class CustomerJS extends Base {
      * */
     reloadData() {
         let self = this;
-        $(this.TableID).find('tbody').html('<tr style="text-align:center"><td colspan="12">loading...</td></tr>');
-        setTimeout(function () {
-            self.loadData()
-        }, 1000);
+        $(this.TableID).find('tbody').html('');
+        self.loadData(true)
+
     }
     /******************************************************************/
 
@@ -67,9 +68,11 @@ class CustomerJS extends Base {
      * add customer func
      * */
     add() {
+        $('.ui-dialog-title').text('Thêm khách hàng');
         CommonJS.resetStyleInputs(); // reset style inputs
-        this.FormDetail.Mode = "add"; // set mode
-        this.FormDetail.dialog('open');
+        this.FormMode = "add"; // set mode
+        this.FormAddSave.dialog('open');
+
     }
     /******************************************************************/
 
@@ -77,30 +80,49 @@ class CustomerJS extends Base {
      * update customer func
      * */
     update() {
+        $('.ui-dialog-title').text('Cập nhật khách hàng');
         let self = this;
         CommonJS.resetStyleInputs(); // reset style inputs
-        $.getJSON("/Contents/data/data.json", function (data) {
-            let customer = data.Customers[self.FormDetail.rowID];
-            let inputs = $('.dialog-add-edit-customer  input');
+        $.ajax({
+            url: '/api/Customers/' + self.FormAddSave.rowID,
+            type: 'GET',
+            dataType: 'json'
+        }).done(function (data) {
+            let customer = data;
+            let inputs = $('.dialog-add-edit  .add-edit-data');
             $.each(inputs, function (index, input) {
                 let fieldName = $(input).attr('fieldName');
                 let format = $(input).attr('format');
                 let fieldValue = customer[fieldName];
+                if (fieldName)
                 if (fieldValue != null) {
                     switch (format) {
                         case "Date":
-
                             fieldValue = CommonJS.formatStringDate(fieldValue);
                             break;
                         default:
                             break;
                     }
-                    $('.dialog-add-edit-customer #' + fieldName).val(fieldValue);
+                    $('.dialog-add-edit #' + fieldName).val(fieldValue);
                 }
-            })
+
+            });
         });
-        this.FormDetail.Mode = "update"; // set mode
-        this.FormDetail.dialog('open');
+        this.FormMode = "update"; // set mode
+        this.FormAddSave.dialog('open');
+    }
+    /******************************************************************/
+
+
+    /**
+    * delete customer func
+    * */
+    delete() {
+        $('.ui-dialog-title').text('Xóa khách hàng');
+        let self = this;
+        CommonJS.resetStyleInputs(); // reset style inputs
+        this.FormMode = "delete"; // set mode
+        this.FormDelete.dialog('open');
     }
     /******************************************************************/
 
@@ -108,15 +130,40 @@ class CustomerJS extends Base {
      * save changes func
      * */
     save() {
-        var mode = this.FormDetail.Mode;
+        let self = this;
+        let mode = this.FormMode;
+        let CustomerCode = self.FormAddSave.rowID;
         switch (mode) {
             case "add":
+                let data = CommonJS.getDataForm('#form-add-edit-customer');
+                $.ajax({
+                    url: '/api/Customers',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json'
+                }).done(function (data) {
+                    console.log(data);
+                }).catch(function (err) {
+                    console.log(err)
+                })
                 break;
             case "update":
                 break;
+            case "delete":
+                $.ajax({
+                    url: '/api/Customers/delete/' + CustomerCode,
+                    dataType: 'json',
+                    type: "GET"
+                }).done(function (data) {
+                    self.FormDelete.dialog('close');
+                    self.loadData(false);
+                }).catch(function (err) {
+                    console.log(err)
+                })
             default:
         }
     }
-    /******************************************************************/
+/******************************************************************/
 
 }

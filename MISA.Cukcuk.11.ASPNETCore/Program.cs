@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace MISA.Cukcuk._11.ASPNETCore
+namespace MISA.Cukcuc.ASP.NET_Core._11
 {
     public class Program
     {

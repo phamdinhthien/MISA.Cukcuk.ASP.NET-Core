@@ -22,6 +22,21 @@ class CommonJS {
     /******************************************************************/
 
     /**
+    * format date to datetime type
+    * @param {any} dateString
+    */
+    static changeStringToDateTime(dateString) {
+        let arrDate = dateString.split('/');
+        let day = arrDate[0];
+        let month = arrDate[1];
+        let year = arrDate[2];
+        let dateTime = year + '-' + month + '-' + day + 'T00:00:00';
+        return dateTime;
+    }
+
+    /******************************************************************/
+
+    /**
      * format currency for string
      * @param {any} currencyString
      */
@@ -62,7 +77,7 @@ class CommonJS {
 
         //handle when click outside table: disable update button and reset background of tr
         $(function () {
-            $('.data-table tbody, .ui-draggable.ui-resizable, .update').click(function () {
+            $('.data-table tbody, .ui-draggable.ui-resizable, .update, .delete').click(function () {
                 event.stopPropagation();
             })
 
@@ -71,6 +86,8 @@ class CommonJS {
                 $('.data-table tbody tr').css('background', 'none');
                 let updateBtn = $('.update');
                 updateBtn.attr('disabled', true);
+                let deleteBtn = $('.delete');
+                deleteBtn.attr('disabled', true);
             });
         });
         //---------------------------------------------------//
@@ -83,11 +100,11 @@ class CommonJS {
     static initForm() {
         let self = this;
         // khoi tao dialog
-        this.FormDetail = $('.dialog-add-edit-customer').dialog({
+        this.FormAddSave = $('.dialog-add-edit').dialog({
             modal: true,
             autoOpen: false,
             minWidth: 652,
-            minHeight: 345
+            minHeight: 350
         })
 
         $("#Birthday").datepicker({
@@ -98,7 +115,12 @@ class CommonJS {
         });
 
         $('.form-btns #form-cancel-btn').click(function () {
-            self.FormDetail.dialog('close');
+            self.FormAddSave.dialog('close');
+        })
+
+        this.FormDelete = $('.dialog-delete').dialog({
+            modal: true,
+            autoOpen: false
         })
     }
     /******************************************************************/
@@ -113,4 +135,40 @@ class CommonJS {
         inputs.removeClass('border-red'); // reset border
     }
     /******************************************************************/
+
+    /**
+     * get all data from dialog form
+     * */
+    static getDataForm(tableID) {
+        var fieldNames = $(tableID + ' [fieldName]');
+        var object = {};
+        $.each(fieldNames, function (index, item) {
+            var fieldName = item.getAttribute('fieldName');
+            var fieldValue = $(item).val();
+            if (fieldName === "Birthday") {
+                fieldValue = fieldValue ? CommonJS.changeStringToDateTime(fieldValue) : null;
+            } else if (fieldName == "GroupCustomerID") {
+                fieldValue = fieldValue ? fieldValue : null;
+            }
+            object[fieldName] = fieldValue;
+        });
+        return object;
+    }
+    /******************************************************************/
+
+    /**
+     * delete one row of table
+     * */
+
+    static deleteRowTable(code) {
+        let rowsTable = $('.data-table tbody tr');
+        $.each(rowsTable, function (index, row) {
+            let firstTdText = $(row).children("td:first-child").text();
+            if (firstTdText === code) {
+                $(row).remove();
+            }
+        })
+    }
+    /******************************************************************/
+
 }

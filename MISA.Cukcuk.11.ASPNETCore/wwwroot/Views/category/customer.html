@@ -14,394 +14,427 @@
 </head>
 
 <body>
-    <!--header-->
-    <div class="header">
-        <!--header-left-->
-        <div class="header-left">
-            <!--logo-->
-            <div class="logo">
-                <div class="left-logo"></div>
-                <div class="right-logo"></div>
+    <div class="layer">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="container">
+        <!--header-->
+        <div class="header">
+            <!--header-left-->
+            <div class="header-left">
+                <!--logo-->
+                <div class="logo">
+                    <div class="left-logo"></div>
+                    <div class="right-logo"></div>
+                </div>
+                <!--end logo-->
+                <!--filter restaurant-->
+                <div class="filter">
+                    <select class="dropdown-custom">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+                <!--end filter restaurant-->
             </div>
-            <!--end logo-->
-            <!--filter restaurant-->
-            <div class="filter">
-                <select class="dropdown-custom">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+            <!--end header-left-->
+            <!--header-right-->
+            <div class="header-right">
+                <!--language-->
+                <div class="header-right-item language">
+                    <select class="dropdown-custom">
+                        <option value="vietnam">Tiếng việt</option>
+                        <option value="english">English</option>
+                    </select>
+                </div>
+                <!--end language-->
+                <!--global-->
+                <div class="header-right-item global">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>2</span>
+                </div>
+                <!--end global-->
+                <!--call-->
+                <div class="header-right-item call">
+                    <div class="call-icon"></div>
+                    <!--<div class="call-news">News</div>-->
+                </div>
+                <!--end call-->
+                <!--account-->
+                <div class="header-right-item account">
+                    <div class="account-avatar"></div>
+                    <span>Nguyen Van A</span>
+                    <div class="arrow-down"></div>
+                    <div class="account-box">
+                        <div class="change-password"><i class="fas fa-edit"></i>Thay đổi mật khẩu</div>
+                        <div class="logout"><i class="fas fa-sign-out-alt"></i> Đăng suất</div>
+                    </div>
+                </div>
+                <!--end account-->
+            </div>
+            <!--end header-right-->
+        </div>
+        <!--end header-->
+        <!--menu-->
+        <div class="menu">
+            <div class="menu-item icon-index">
+                <div class="icon"></div>
+                <div class="title">Tổng quan</div>
+            </div>
+            <div class="menu-item icon-report">
+                <div class="icon"></div>
+                <div class="title">Báo cáo</div>
+            </div>
+            <div class="menu-item icon-purchase">
+                <div class="icon"></div>
+                <div class="title">Mua hàng</div>
+            </div>
+            <div class="menu-item icon-store">
+                <div class="icon"></div>
+                <div class="title">Kho</div>
+            </div>
+            <div class="menu-item icon-money">
+                <div class="icon"></div>
+                <div class="title">Quỹ tiền mặt</div>
+            </div>
+            <div class="menu-item icon-deposit">
+                <div class="icon"></div>
+                <div class="title">Quỹ tiền gửi</div>
+            </div>
+            <div class="menu-item icon-spending">
+                <div class="icon"></div>
+                <div class="title">Chi phi</div>
+            </div>
+            <div class="menu-item icon-discount">
+                <div class="icon"></div>
+                <div class="title">Khuyến mại</div>
+            </div>
+            <div class="menu-item icon-menufood">
+                <div class="icon"></div>
+                <div class="title">Thực đơn</div>
+            </div>
+            <div class="menu-item icon-category">
+                <div class="icon"></div>
+                <div class="title">Danh mục</div>
+            </div>
+            <div class="menu-item icon-cancel">
+                <div class="icon"></div>
+                <div class="title">Hủy hóa đơn</div>
+            </div>
+            <div class="menu-item icon-sms">
+                <div class="icon"></div>
+                <div class="title">SMS maketing</div>
+            </div>
+            <div class="menu-item icon-deliver">
+                <div class="icon"></div>
+                <div class="title">Đối tác giao hàng</div>
+            </div>
+            <div class="menu-item icon-meinvoice">
+                <div class="icon"></div>
+                <div class="title">Hóa đơn điện tử</div>
+            </div>
+            <div class="menu-item icon-setting">
+                <div class="icon"></div>
+                <div class="title">Thiết lập hệ thống</div>
+            </div>
+            <div class="menu-item icon-help">
+                <div class="icon"></div>
+                <div class="title">Trợ giúp</div>
+            </div>
+            <div class="menu-item icon-subscriber">
+                <div class="icon"></div>
+                <div class="title">Thuê bao</div>
+            </div>
+            <div class="menu-item icon-5food">
+                <div class="icon"></div>
+                <div class="title">5Food</div>
+            </div>
+        </div>
+        <!--end menu-->
+        <!--content-->
+        <div class="content">
+            <!--breadcrumb-->
+            <div class="breadcrumb">
+                <div class="breadcrumb-main">Danh mục</div>
+                <div><i class="fas fa-caret-right breadcrumb-arrow"></i></div>
+                <div class="breadcrumb-sub">Nhân viên</div>
+            </div>
+            <!--end breadcrumb-->
+            <!--functions-->
+            <div class="functions">
+                <button class="add">
+                    <div class="icon"></div>
+                    <div class="title">Thêm</div>
+                </button>
+                <button class="duplicate" disabled>
+                    <div class="icon"></div>
+                    <div class="title">Nhân bản</div>
+                </button>
+                <button class="update" disabled>
+                    <div class="icon"></div>
+                    <div class="title">Sửa</div>
+                </button>
+                <button class="delete" disabled>
+                    <div class="icon"></div>
+                    <div class="title">Xóa</div>
+                </button>
+                <button class="reload-data">
+                    <div class="icon"></div>
+                    <div class="title">Nạp</div>
+                </button>
+                <button class="export">
+                    <div class="icon"></div>
+                    <div class="title">Nhập khẩu</div>
+                </button>
+                <button class="import">
+                    <div class="icon"></div>
+                    <div class="title">Xuất khẩu</div>
+                </button>
+                <button class="call">
+                    <div class="icon"></div>
+                    <div class="title">Gọi khách hàng</div>
+                </button>
+                <button class="help">
+                    <div class="icon"></div>
+                    <div class="title">Giúp</div>
+                </button>
+
+                <!--dialog-->
+                <!--dialog-add-exit-->
+                <div class="dialog dialog-add-edit" id="form-add-edit-customer">
+                    <div class="tr display-flex justify-content">
+                        <div class="td align-items-center">
+                            <label for="CustomerCode" class="padding-right">Mã khách hàng <span style="color: red">(*)</span></label>
+                            <input id="CustomerCode" fieldName="CustomerCode" required class="add-edit-data" />
+                            <i class="fas fa-exclamation-circle error-icon" style="color:red"></i>
+                        </div>
+                        <div class="td align-items-center">
+                            <label for="CustomerName">Tên khách hàng <span style="color: red">(*)</span></label>
+                            <input id="CustomerName" fieldName="CustomerName" required class="add-edit-data" />
+                            <i class="fas fa-exclamation-circle error-icon" style="color:red"></i>
+                        </div>
+                    </div>
+
+                    <div class="tr display-flex">
+                        <div class="td align-items-center">
+                            <label for="GroupCustomerID">Nhóm khách hàng</label>
+                            <input id="GroupCustomerID" fieldName="GroupCustomerID" list="CustomerGroupList" name="CustomerGroupList" class="add-edit-data" />
+                            <datalist id="CustomerGroupList">
+                                <option value="Internet Explorer">
+                                <option value="Firefox">
+                                <option value="Chrome">
+                                <option value="Opera">
+                                <option value="Safari">
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <div class="tr display-flex align-items-center">
+                        <div class="td align-items-center">
+                            <label for="Tel" class="padding-right" title="Điện thoại di dộng">ĐT di động <span style="color: red">(*)</span></label>
+                            <input id="Tel" fieldName="Tel" required class="add-edit-data" />
+                            <i class="fas fa-exclamation-circle error-icon" style="color:red"></i>
+                        </div>
+                    </div>
+
+                    <div class="tr display-flex">
+                        <div class="td align-items-center">
+                            <label for="Birthday">Ngày sinh</label>
+                            <div style="position: relative">
+                                <input id="Birthday" fieldName="Birthday" format="Date" class="add-edit-data" />
+                                <div class="daypicker-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tr display-flex justify-content">
+                        <div class="td align-items-center">
+                            <label for="CompanyName" class="padding-right">Tên công ty</label>
+                            <input id="CompanyName" class="long-input add-edit-data" fieldName="CompanyName" />
+                        </div>
+                    </div>
+
+                    <div class="tr display-flex justify-content">
+                        <div class="td display-flex">
+                            <label for="CompanyTaxCode">Mã số thuế</label>
+                            <input id="CompanyTaxCode" fieldName="CompanyTaxCode" class="add-edit-data" />
+                        </div>
+                        <div class="td align-items-center">
+                            <label for="Email">Email</label>
+                            <input id="Email" fieldName="Email" class="add-edit-data" />
+                        </div>
+                    </div>
+
+                    <div class="tr display-flex justify-content">
+                        <div class="td align-items-center">
+                            <label for="Address" class="padding-right">Địa chỉ</label>
+                            <input id="Address" class="long-input add-edit-data" fieldName="Address" />
+                        </div>
+                    </div>
+
+                    <div class="tr display-flex justify-content">
+                        <div class="td align-items-center" style="width: 100%;">
+                            <label for="Description" class="padding-right">Ghi chú</label>
+                            <textarea rows="4" cols="50" id="Description" class="long-input add-edit-data" fieldName="Description"></textarea>
+                        </div>
+                    </div>
+                    <!--form buttons-->
+                    <div class="form-addSave-btns">
+                        <div>
+                            <button class="form-save-btn">
+                                <img src="Contents/icons/Save16.png" />Cất
+                            </button>
+                            <button id="form-saveAdd-btn">
+                                <img src="Contents/icons/SaveAdd16.png" />Cất & thêm
+                            </button>
+                            <button id="form-cancel-btn">
+                                <img src="/Contents/icons/Disable16.png" />Hủy bỏ
+                            </button>
+                        </div>
+                        <div>
+                            <button> <img src="/Contents/icons/icon-question.png" />Giúp</button>
+                        </div>
+                    </div>
+                    <!--end-dialog-add-exit-->
+                    <!--dialog-delete-->
+                    <div class="dialog dialog-delete">
+                        <div class="dialog-delete-title">
+                            <img src="/Contents/images/exclamation.png" />
+                            <div>Bạn có muốn xóa</div>
+                        </div>
+                        <div class="form-alert-btns">
+                            <button class="form-save-btn">
+                                Có
+                            </button>
+                            <button class="form-cancel-btn">
+                                Hủy bỏ
+                            </button>
+                        </div>
+                    </div>
+                    <!--end-dialog-delete-->
+                    <!--end form buttons-->
+                </div>
+                <!--end dialog-->
+            </div>
+            <!--end functions-->
+            <!--table-->
+            <div class="table-container">
+                <div class="data-table">
+                    <table border="1" class="table-resizable" id="tbCustomers">
+                        <thead>
+                            <tr>
+                                <th fieldName="CustomerCode">
+                                    <div class="title">Mã khách hàng</div>
+                                    <div class="search">
+                                        <button>*</button>
+                                        <input type="text" name="" id="">
+                                    </div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="CustomerName">
+                                    <div class="title">Tên khách hàng</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="Birthday" format="Date" style-type="text-align-center">
+                                    <div class="title">Ngày sinh</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="CompanyName">
+                                    <div class="title">Tên công ty</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="CompanyTaxCode">
+                                    <div class="title">Mã số thuế</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="Address">
+                                    <div class="title">Địa chỉ</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="Tel">
+                                    <div class="title">Số điện thoại</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="Email">
+                                    <div class="title">Email</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="Amount" format="Money" style-type="text-align-right">
+                                    <div class="title">Số tiền nợ</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="Description">
+                                    <div class="title">Ghi chú</div>
+                                    <div class="search"><button>*</button><input type="text" name="" id=""></div>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="Is5FoodMember" format="Checkbox" style-type="text-align-center">
+                                    <div class="title">Thành viên 5Food</div>
+                                    <input type="text" name="" id="" list="Is5FoodMemberList">
+                                    <datalist id="Is5FoodMemberList">
+                                        <option value="Internet Explorer">
+                                        <option value="Firefox">
+                                        <option value="Chrome">
+                                        <option value="Opera">
+                                        <option value="Safari">
+                                    </datalist>
+                                    <div class="resize-bar"></div>
+                                </th>
+                                <th fieldName="IsAddTo5Food" format="Checkbox" style-type="text-align-center">
+                                    <div class="title">Ngừng theo dõi</div>
+                                    <input type="text" name="" id="" list="IsAddTo5FoodList">
+                                    <datalist id="IsAddTo5FoodList">
+                                        <option value="Internet Explorer">
+                                        <option value="Firefox">
+                                        <option value="Chrome">
+                                        <option value="Opera">
+                                        <option value="Safari">
+                                    </datalist>
+                                    <div class="resize-bar"></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--dữ liệu được load ở đây-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--end table-->
+            <!--change page-->
+            <div class="change-page">
+                <div class="first"></div>
+                <div class="pre"></div>
+                <span>|</span>
+                Trang &nbsp; <input type="number" name="" id="" value="0"> &nbsp; trên 10
+                <span>|</span>
+                <div class="next"></div>
+                <div class="last"></div>
+                <span>|</span>
+                <div class="reload"></div>
+                <span>|</span>
+                <select name="" id="">
+                    <option value="">10</option>
+                    <option value="">20</option>
+                    <option value="">50</option>
+                    <option value="">100</option>
                 </select>
+                <span style="position: absolute; color: black; right: 0;">Hiển thị 1-19 trên 19 kết quả</span>
             </div>
-            <!--end filter restaurant-->
+            <!--end change page-->
         </div>
-        <!--end header-left-->
-        <!--header-right-->
-        <div class="header-right">
-            <!--language-->
-            <div class="header-right-item language">
-                <select class="dropdown-custom">
-                    <option value="vietnam">Tiếng việt</option>
-                    <option value="english">English</option>
-                </select>
-            </div>
-            <!--end language-->
-            <!--global-->
-            <div class="header-right-item global">
-                <i class="fas fa-globe-americas"></i>
-                <span>2</span>
-            </div>
-            <!--end global-->
-            <!--call-->
-            <div class="header-right-item call">
-                <div class="call-icon"></div>
-                <!--<div class="call-news">News</div>-->
-            </div>
-            <!--end call-->
-            <!--account-->
-            <div class="header-right-item account">
-                <div class="account-avatar"></div>
-                <span>Nguyen Van A</span>
-                <div class="arrow-down"></div>
-                <div class="account-box">
-                    <div class="change-password"><i class="fas fa-edit"></i>Thay đổi mật khẩu</div>
-                    <div class="logout"><i class="fas fa-sign-out-alt"></i> Đăng suất</div>
-                </div>
-            </div>
-            <!--end account-->
-        </div>
-        <!--end header-right-->
+        <!--end content-->
     </div>
-    <!--end header-->
-    <!--menu-->
-    <div class="menu">
-        <div class="menu-item icon-index">
-            <div class="icon"></div>
-            <div class="title">Tổng quan</div>
-        </div>
-        <div class="menu-item icon-report">
-            <div class="icon"></div>
-            <div class="title">Báo cáo</div>
-        </div>
-        <div class="menu-item icon-purchase">
-            <div class="icon"></div>
-            <div class="title">Mua hàng</div>
-        </div>
-        <div class="menu-item icon-store">
-            <div class="icon"></div>
-            <div class="title">Kho</div>
-        </div>
-        <div class="menu-item icon-money">
-            <div class="icon"></div>
-            <div class="title">Quỹ tiền mặt</div>
-        </div>
-        <div class="menu-item icon-deposit">
-            <div class="icon"></div>
-            <div class="title">Quỹ tiền gửi</div>
-        </div>
-        <div class="menu-item icon-spending">
-            <div class="icon"></div>
-            <div class="title">Chi phi</div>
-        </div>
-        <div class="menu-item icon-discount">
-            <div class="icon"></div>
-            <div class="title">Khuyến mại</div>
-        </div>
-        <div class="menu-item icon-menufood">
-            <div class="icon"></div>
-            <div class="title">Thực đơn</div>
-        </div>
-        <div class="menu-item icon-category">
-            <div class="icon"></div>
-            <div class="title">Danh mục</div>
-        </div>
-        <div class="menu-item icon-cancel">
-            <div class="icon"></div>
-            <div class="title">Hủy hóa đơn</div>
-        </div>
-        <div class="menu-item icon-sms">
-            <div class="icon"></div>
-            <div class="title">SMS maketing</div>
-        </div>
-        <div class="menu-item icon-deliver">
-            <div class="icon"></div>
-            <div class="title">Đối tác giao hàng</div>
-        </div>
-        <div class="menu-item icon-meinvoice">
-            <div class="icon"></div>
-            <div class="title">Hóa đơn điện tử</div>
-        </div>
-        <div class="menu-item icon-setting">
-            <div class="icon"></div>
-            <div class="title">Thiết lập hệ thống</div>
-        </div>
-        <div class="menu-item icon-help">
-            <div class="icon"></div>
-            <div class="title">Trợ giúp</div>
-        </div>
-        <div class="menu-item icon-subscriber">
-            <div class="icon"></div>
-            <div class="title">Thuê bao</div>
-        </div>
-        <div class="menu-item icon-5food">
-            <div class="icon"></div>
-            <div class="title">5Food</div>
-        </div>
-    </div>
-    <!--end menu-->
-    <!--content-->
-    <div class="content">
-        <!--breadcrumb-->
-        <div class="breadcrumb">
-            <div class="breadcrumb-main">Danh mục</div>
-            <div><i class="fas fa-caret-right breadcrumb-arrow"></i></div>
-            <div class="breadcrumb-sub">Nhân viên</div>
-        </div>
-        <!--end breadcrumb-->
-        <!--functions-->
-        <div class="functions">
-            <button class="add">
-                <div class="icon"></div>
-                <div class="title">Thêm</div>
-            </button>
-            <button class="duplicate" disabled>
-                <div class="icon"></div>
-                <div class="title">Nhân bản</div>
-            </button>
-            <button class="update" disabled>
-                <div class="icon"></div>
-                <div class="title">Sửa</div>
-            </button>
-            <button class="delete" disabled>
-                <div class="icon"></div>
-                <div class="title">Xóa</div>
-            </button>
-            <button class="reload-data">
-                <div class="icon"></div>
-                <div class="title">Nạp</div>
-            </button>
-            <button class="export">
-                <div class="icon"></div>
-                <div class="title">Nhập khẩu</div>
-            </button>
-            <button class="import">
-                <div class="icon"></div>
-                <div class="title">Xuất khẩu</div>
-            </button>
-            <button class="call">
-                <div class="icon"></div>
-                <div class="title">Gọi khách hàng</div>
-            </button>
-            <button class="help">
-                <div class="icon"></div>
-                <div class="title">Giúp</div>
-            </button>
-
-            <!--dialog-->
-            <div class="dialog dialog-add-edit-customer">
-                <div class="tr display-flex justify-content">
-                    <div class="td align-items-center">
-                        <label for="CustomerCode" class="padding-right">Mã khách hàng <span style="color: red">(*)</span></label>
-                        <input id="CustomerCode" fieldName="CustomerCode" required />
-                        <i class="fas fa-exclamation-circle error-icon" style="color:red"></i>
-                    </div>
-                    <div class="td align-items-center">
-                        <label for="CustomerName">Tên khách hàng <span style="color: red">(*)</span></label>
-                        <input id="CustomerName" fieldName="CustomerName" required />
-                        <i class="fas fa-exclamation-circle error-icon" style="color:red"></i>
-                    </div>
-                </div>
-
-                <div class="tr display-flex">
-                    <label for="CustomerGroup">Nhóm khách hàng</label>
-                    <input id="CustomerGroup" fieldName="CustomerGroup" list="CustomerGroupList" name="CustomerGroupList" />
-                    <datalist id="CustomerGroupList">
-                        <option value="Internet Explorer">
-                        <option value="Firefox">
-                        <option value="Chrome">
-                        <option value="Opera">
-                        <option value="Safari">
-                    </datalist>
-
-                </div>
-
-                <div class="tr display-flex align-items-center">
-                    <label for="Tel" class="padding-right" title="Điện thoại di dộng">ĐT di động <span style="color: red">(*)</span></label>
-                    <input id="Tel" fieldName="Tel" required />
-                    <i class="fas fa-exclamation-circle error-icon" style="color:red"></i>
-                </div>
-
-                <div class="tr display-flex">
-                    <label for="Birthday">Ngày sinh</label>
-                    <div style="position: relative">
-                        <input id="Birthday" fieldName="Birthday" format="Date" />
-                        <div class="daypicker-btn"></div>
-                    </div>
-                </div>
-
-                <div class="tr display-flex justify-content">
-                    <label for="CompanyName" class="padding-right">Tên công ty</label>
-                    <input id="CompanyName" class="long-input" fieldName="CompanyName" />
-                </div>
-
-                <div class="tr display-flex justify-content">
-                    <div class="td display-flex">
-                        <label for="CompanyTaxCode">Mã số thuế</label>
-                        <input id="CompanyTaxCode" fieldName="CompanyTaxCode" />
-                    </div>
-                    <div class="td">
-                        <label for="Mail">Email</label>
-                        <input id="Mail" fieldName="Mail" />
-                    </div>
-                </div>
-
-                <div class="tr display-flex justify-content">
-                    <label for="Address" class="padding-right">Địa chỉ</label>
-                    <input id="Address" class="long-input" fieldName="Address" />
-                </div>
-
-                <div class="tr display-flex justify-content">
-                    <label for="Description" class="padding-right">Ghi chú</label>
-                    <textarea rows="4" cols="50" id="Description" class="long-input" fieldName="Description"></textarea>
-                </div>
-                <!--form buttons-->
-                <div class="form-btns">
-                    <div>
-                        <button id="form-save-btn">
-                            <img src="Contents/icons/Save16.png" />Cất
-                        </button>
-                        <button id="form-saveAdd-btn">
-                            <img src="Contents/icons/SaveAdd16.png" />Cất & thêm
-                        </button>
-                        <button id="form-cancel-btn">
-                            <img src="/Contents/icons/Disable16.png" />Hủy bỏ
-                        </button>
-                    </div>
-                    <div>
-                        <button> <img src="/Contents/icons/icon-question.png" />Giúp</button>
-                    </div>
-                </div>
-                <!--end form buttons-->
-            </div>
-            <!--end dialog-->
-        </div>
-        <!--end functions-->
-        <!--table-->
-        <div class="table-container">
-            <div class="data-table">
-                <table border="1" class="table-resizable" id="tbCustomers">
-                    <thead>
-                        <tr>
-                            <th fieldName="CustomerCode">
-                                <div class="title">Mã khách hàng</div>
-                                <div class="search">
-                                    <button>*</button>
-                                    <input type="text" name="" id="">
-                                </div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="CustomerName">
-                                <div class="title">Tên khách hàng</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="Birthday" format="Date" style-type="text-align-center">
-                                <div class="title">Ngày sinh</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="CompanyName">
-                                <div class="title">Tên công ty</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="CompanyTaxCode">
-                                <div class="title">Mã số thuế</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="Address">
-                                <div class="title">Địa chỉ</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="Tel">
-                                <div class="title">Số điện thoại</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="Email">
-                                <div class="title">Email</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="Amount" format="Money"  style-type="text-align-right">
-                                <div class="title">Số tiền nợ</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="Description">
-                                <div class="title">Ghi chú</div>
-                                <div class="search"><button>*</button><input type="text" name="" id=""></div>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="Is5FoodMember" format="Checkbox" style-type="text-align-center">
-                                <div class="title">Thành viên 5Food</div>
-                                <input type="text" name="" id=""  list="Is5FoodMemberList">
-                                <datalist id="Is5FoodMemberList">
-                                    <option value="Internet Explorer">
-                                    <option value="Firefox">
-                                    <option value="Chrome">
-                                    <option value="Opera">
-                                    <option value="Safari">
-                                </datalist>
-                                <div class="resize-bar"></div>
-                            </th>
-                            <th fieldName="IsAddTo5Food" format="Checkbox" style-type="text-align-center">
-                                <div class="title">Ngừng theo dõi</div>
-                                <input type="text" name="" id="" list="IsAddTo5FoodList">
-                                <datalist id="IsAddTo5FoodList">
-                                    <option value="Internet Explorer">
-                                    <option value="Firefox">
-                                    <option value="Chrome">
-                                    <option value="Opera">
-                                    <option value="Safari">
-                                </datalist>
-                                <div class="resize-bar"></div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!--dữ liệu được load ở đây-->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!--end table-->
-        <!--change page-->
-        <div class="change-page">
-            <div class="first"></div>
-            <div class="pre"></div>
-            <span>|</span>
-            Trang &nbsp; <input type="number" name="" id="" value="0"> &nbsp; trên 10
-            <span>|</span>
-            <div class="next"></div>
-            <div class="last"></div>
-            <span>|</span>
-            <div class="reload"></div>
-            <span>|</span>
-            <select name="" id="">
-                <option value="">10</option>
-                <option value="">20</option>
-                <option value="">50</option>
-                <option value="">100</option>
-            </select>
-            <span style="position: absolute; color: black; right: 0;">Hiển thị 1-19 trên 19 kết quả</span>
-        </div>
-        <!--end change page-->
-    </div>
-    <!--end content-->
-
     <script src="/Scripts/libraries/jquery-3.4.1.min.js"></script>
     <script src="/Scripts/libraries/jquery-ui.js"></script>
     <script src="/Scripts/common/commonJS.js"></script>

@@ -1,0 +1,14 @@
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\bin\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.deps.json
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\bin\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.runtimeconfig.json
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\bin\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.runtimeconfig.dev.json
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\bin\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.dll
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\bin\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.pdb
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.csprojAssemblyReference.cache
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.csproj.CoreCompileInputs.cache
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.RazorAssemblyInfo.cache
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.RazorAssemblyInfo.cs
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.AssemblyInfoInputs.cache
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.AssemblyInfo.cs
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.RazorTargetAssemblyInfo.cache
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.dll
+E:\Web.Fresher.11\MISA.Web2019C11\MemberSourceCode\pdthien\MISA.Cukcuc.ASP.NET-Core.11\MISA.Cukcuc.ASP.NET-Core.11\obj\Debug\netcoreapp2.2\MISA.Cukcuc.ASP.NET-Core.11.pdb
