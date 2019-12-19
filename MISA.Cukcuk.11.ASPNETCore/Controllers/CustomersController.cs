@@ -22,33 +22,33 @@ namespace MISA.Cukcuc.ASP.NET_Core._11.Controllers
         [HttpGet]
         [Route("")]
 
-        public IEnumerable<T> GetCustomers()
+        public IEnumerable<Customer> GetCustomers()
         {
-            return dataAccess.GetAllDatas<T>("Proc_GetCustomers");
+            return dataAccess.GetAllDatas<Customer>("Proc_GetCustomers");
         }
 
 
         // GET: api/Customers/5
         [HttpGet]
         [Route("{code}")]
-        public T GetOneCustomer(string code)
+        public Customer GetOneCustomer(string code)
         {
-            return dataAccess.GetOneEntity(code);
+            return dataAccess.GetOneEntity<Customer>(new object[] { code }, "Proc_GetOneCustomer");
         }
 
         // GET: api/Customers/delete/5
         [HttpGet]
         [Route("delete/{code}")]
-        public bool DeleteOneCustomer(string code)
+        public bool DeleteOneCustomer(object code)
         {
-            return dataAccess.DeleteOneCustomer(code);
+            return dataAccess.DeleteOneCustomer<Customer>(new object[]{ code }, "Proc_DelOneCustomer");
         }
 
         [HttpPost]
-        public IActionResult InsertOneCustomer([FromBody] T customer)
+        public IActionResult InsertOneCustomer([FromBody] Customer customer)
         {
             customer.CustomerID = Guid.NewGuid();
-            bool check = dataAccess.InsertEntity<T>(customer, "Proc_InsertOneCustomer");
+            bool check = dataAccess.InsertEntity<Customer>(customer, "Proc_InsertOneCustomer");
             if (!check)
             {
                 return BadRequest();

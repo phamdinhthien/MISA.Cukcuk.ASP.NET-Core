@@ -10,16 +10,25 @@ namespace MISA.Cukcuc.ASP.NET_Core._11.DBAccess
 {
     public class DataAccess
     {
-
+        private string _stringConnection = @"Data Source=Database\SQL2014;Initial Catalog=MISA.CukCuk.Web11_PDThien;Integrated Security=True";
+        private SqlConnection _sqlConnection;
+        private SqlCommand _sqlCommand;
+        public DataAccess()
+        {
+            _sqlConnection = new SqlConnection(_stringConnection);
+            _sqlCommand.CommandType = CommandType.StoredProcedure;
+            _sqlConnection.Open();
+        }
+        ~DataAccess()
+        {
+            _sqlConnection.Close();
+        }
         public IEnumerable<T> GetAllDatas<T>(string storeName)
         {
-            List<T> Entities = new List<T>();
-
-            SqlConnection sqlConnection = DBUtils.GetDBConnection();
+            List<T> entities = new List<T>();
             var cmdText = storeName;
-            SqlCommand sqlCommand = new SqlCommand(cmdText, sqlConnection);
-            sqlConnection.Open();
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            _sqlCommand = new SqlCommand(cmdText, _sqlConnection);
+            SqlDataReader sqlDataReader = _sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
             {
                 T entity = (T)Activator.CreateInstance(typeof(T));
@@ -33,21 +42,23 @@ namespace MISA.Cukcuc.ASP.NET_Core._11.DBAccess
                         PropertyInfo.SetValue(entity, colValue);
                     }
                 }
-                Entities.Add(entity);
+                entities.Add(entity);
             }
-            sqlConnection.Close();
-            return Entities;
+            return entities;
         }
 
-        public object GetOneEntity<T>(object id, string storeName)
+        public T GetOneEntity<T>(object[] paramaters, string storeName)
         {
-            Models.T entity = new Models.T();
-            SqlConnection sqlConnection = DBUtils.GetDBConnection();
-            var cmdText = @"[dbo].[Proc_GetOneCustomer] @CustomerCode";
-            SqlCommand sqlCommand = new SqlCommand(cmdText, sqlConnection);
-            sqlCommand.Parameters.AddWithValue("@CustomerCode", id);
-            sqlConnection.Open();
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            T entity = (T)Activator.CreateInstance(typeof(T));
+            var cmdText = storeName;
+            _sqlCommand = new SqlCommand(cmdText, _sqlConnection);
+            SqlCommandBuilder.DeriveParameters(_sqlCommand);
+            var sqlParameters = _sqlCommand.Parameters;
+            for (int i = 1; i < sqlParameters.Count; i++)
+            {
+                sqlParameters[i].Value = paramaters[i - 1];
+            }
+            SqlDataReader sqlDataReader = _sqlCommand.ExecuteReader();
             if (sqlDataReader.HasRows)
             {
                 sqlDataReader.Read();
@@ -65,62 +76,50 @@ namespace MISA.Cukcuc.ASP.NET_Core._11.DBAccess
             return entity;
         }
 
-        public bool DeleteOneCustomer(object id)
+        public bool DeleteOneCustomer<T>(object[] paramaters, string storeName)
         {
-            SqlConnection sqlConnection = DBUtils.GetDBConnection();
-            var cmdText = @"[dbo].[Proc_DelOneCustomer]";
-            SqlCommand sqlCommand = new SqlCommand(cmdText, sqlConnection);
-            sqlCommand.CommandType = CommandType.StoredProcedure;
+            var cmdText = storeName;
+            _sqlCommand = new SqlCommand(cmdText, _sqlConnection);
             try
             {
-                sqlCommand.Parameters.AddWithValue("@CustomerCode", id);
-                sqlConnection.Open();
-                sqlCommand.ExecuteNonQuery();
+                SqlCommandBuilder.DeriveParameters(_sqlCommand);
+                var sqlParameters = _sqlCommand.Parameters;
+                for (int i = 1; i < sqlParameters.Count; i++)
+                {
+                    sqlParameters[i].Value = paramaters[i - 1];
+                }
+                _sqlCommand.ExecuteNonQuery();
             }
             catch (Exception)
             {
                 return false;
-            }
-            finally
-            {
-                sqlConnection.Close();
             }
             return true;
         }
 
         public bool InsertEntity<T>(T entity, string storeName)
         {
-
-            SqlConnection sqlConnection = DBUtils.GetDBConnection();
             var cmdText = storeName;
             try
             {
-                SqlCommand sqlCommand = new SqlCommand(cmdText, sqlConnection);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlConnection.Open();
-                SqlCommandBuilder.DeriveParameters(sqlCommand);
-                var sqlParameters = sqlCommand.Parameters;
+                _sqlCommand = new SqlCommand(cmdText, _sqlConnection);
+                SqlCommandBuilder.DeriveParameters(_sqlCommand);
+                var sqlParameters = _sqlCommand.Parameters;
                 for (int i = 1; i < sqlParameters.Count; i++)
                 {
                     SqlParameter parameter = sqlParameters[i];
                     var paramaterName = parameter.ParameterName;
-
                     var propertyInfo = entity.GetType().GetProperty(paramaterName.Replace("@", ""));
                     if (propertyInfo != null)
                     {
-                        
                         parameter.Value = propertyInfo.GetValue(entity) != null ? propertyInfo.GetValue(entity) : DBNull.Value;
                     }
                 }
-                sqlCommand.ExecuteNonQuery();
+                _sqlCommand.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
-            }
-            finally
-            {
-                sqlConnection.Close();
             }
             return true;
         }
