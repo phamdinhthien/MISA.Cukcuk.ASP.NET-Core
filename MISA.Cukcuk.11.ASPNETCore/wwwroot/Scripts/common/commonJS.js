@@ -31,6 +31,10 @@ class CommonJS {
         let month = arrDate[1];
         let year = arrDate[2];
         let dateTime = year + '-' + month + '-' + day + 'T00:00:00';
+        let date = new Date(dateTime);
+        if (isNaN(date)) {
+            dateTime = null
+        }
         return dateTime;
     }
 
@@ -114,8 +118,9 @@ class CommonJS {
             $("#Birthday").focus();
         });
 
-        $('.form-btns #form-cancel-btn').click(function () {
+        $('.form-btns .form-cancel-btn').click(function () {
             self.FormAddSave.dialog('close');
+            self.FormDelete.dialog('close');
         })
 
         this.FormDelete = $('.dialog-delete').dialog({
@@ -129,7 +134,9 @@ class CommonJS {
      * reset style for all required inputs
      * */
     static resetStyleInputs() {
-        $('input').val(''); // remove all values
+        // remove all values
+        $('input').val(''); 
+        $('textarea').val('');
         let inputs = $('input[required]');
         inputs.next('.error-icon').css('display', 'none'); // hide icon error
         inputs.removeClass('border-red'); // reset border

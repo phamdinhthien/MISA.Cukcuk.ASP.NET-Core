@@ -19,6 +19,7 @@ class CustomerJS extends Base {
     init() {
         this.TableID = "#tbCustomers";
         this.EntityName = "Customers";
+        this.EntityID = "CustomerID";
     }
     /******************************************************************/
 
@@ -59,7 +60,7 @@ class CustomerJS extends Base {
     reloadData() {
         let self = this;
         $(this.TableID).find('tbody').html('');
-        self.loadData(true)
+        self.loadData(true);
 
     }
     /******************************************************************/
@@ -107,7 +108,8 @@ class CustomerJS extends Base {
                 }
 
             });
-        });
+        })
+            .fail()
         this.FormMode = "update"; // set mode
         this.FormAddSave.dialog('open');
     }
@@ -132,33 +134,44 @@ class CustomerJS extends Base {
     save() {
         let self = this;
         let mode = this.FormMode;
-        let CustomerCode = self.FormAddSave.rowID;
+        let CustomerID = self.FormAddSave.rowID;
+        let data = CommonJS.getDataForm('#form-add-edit-customer');
         switch (mode) {
             case "add":
-                let data = CommonJS.getDataForm('#form-add-edit-customer');
                 $.ajax({
                     url: '/api/Customers',
                     type: 'POST',
-                    dataType: 'json',
                     data: JSON.stringify(data),
                     contentType: 'application/json'
                 }).done(function (data) {
-                    console.log(data);
-                }).catch(function (err) {
+                    console.log(data)
+                    self.FormAddSave.dialog('close');
+                    self.loadData(false);
+                }).fail(function (err) {
                     console.log(err)
                 })
                 break;
             case "update":
+                $.ajax({
+                    url: '/api/Customers/update/' + CustomerID,
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json'
+                }).done(function (data) {
+                    self.FormAddSave.dialog('close');
+                    self.loadData(false);
+                }).fail(function (err) {
+                    console.log(err)
+                })
                 break;
             case "delete":
                 $.ajax({
-                    url: '/api/Customers/delete/' + CustomerCode,
-                    dataType: 'json',
+                    url: '/api/Customers/delete/' + CustomerID,
                     type: "GET"
                 }).done(function (data) {
                     self.FormDelete.dialog('close');
                     self.loadData(false);
-                }).catch(function (err) {
+                }).fail(function (err) {
                     console.log(err)
                 })
             default:

@@ -2,6 +2,7 @@
     constructor() {
         this.TableID = "";
         this.EntityName = "";
+        this.EntityID = "";
     }
 
     /**
@@ -28,7 +29,7 @@
             let rows = data;
             layer.css('display', 'none');
             $.each(rows, function (index1, row) {
-                let tr = $(`<tr rowID=${index1}></tr>`);
+                let tr = $(`<tr rowID=${row[self.EntityID]}></tr>`);
                 $.each(ths, function (index2, th) {
                     let fieldName = $(th).attr('fieldName');
                     let format = $(th).attr('format');
@@ -88,7 +89,7 @@
             deleteBtn.attr('disabled', false);
             trs.css('background', 'none'); // reset background for all tr in tbody
             $(this).css('background', '#9bc7e366'); // set background for tr which clicked
-            let rowID = $(this).children('td:first-child').text(); // get id customer
+            let rowID = $(this).attr('rowID'); // get id customer
             self.FormAddSave.rowID = rowID; // set id
         })
         /******************************************************************/
