@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortLink | MISA</title>
+
+    <!------------------------IMPORT CSS------------------------------------>
+    <!---------------------------------------------------------------------->
+    <!---------------------------------------------------------------------->
+    <link href="/Library/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Library/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/Library/css/animate.css" rel="stylesheet">
+    <link href="/Library/css/plugins/codemirror/codemirror.css" rel="stylesheet">
+    <link href="/Library/css/plugins/codemirror/ambiance.css" rel="stylesheet">
+    <link href="/Library/css/style.css" rel="stylesheet">
+    <link href="/CSS/edit-modal.css" rel="stylesheet" />
+    <link href="/CSS/modal.css" rel="stylesheet" />
+    <link href="/CSS/short-link.css" rel="stylesheet" />
+    <!------------------------END IMPORT------------------------------------>
+</head>
+
+<body class="no-skin-config full-height-layout">
+    <!------------------------CONTENT AREA---------------------------------->
+    <!---------------------------------------------------------------------->
+    <!---------------------------------------------------------------------->
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg" style="margin: 0;">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <div class="navbar-header d-flex align-items-center">
+
+
+                        <img alt="image" class="rounded-circle" src="/Library/img/logo.png">
+                        <h2 class="font-bold">
+                            MISA SHORTLINK
+                        </h2>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addShortLink">
+                                <i class="fa fa-plus-circle"></i> Thêm mới
+                            </button>
+                        </li>
+
+
+                        <li class="dropdown" style="margin: 0 10px 0 18px;">
+                            <a class="d-flex align-items-center dropdown-toggle count-info" data-toggle="dropdown" href="#" aria-expanded="false" style="padding: 0;line-height: 50px;">
+                                <img alt="image" class="rounded-circle" src="/Library/img/avt-user-default.png" style="width: 34px;margin: 6px;background-color: #fff;border: 1px solid #fff;">
+                                <span class="font-bold" style="color: #fff;"> MISA Account</span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs" x-placement="bottom-start" style="position: absolute;top: 56px;left: 0px;will-change: top, left;">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Contacts</a></li>
+                                <li><a class="dropdown-item" href="#">Mailbox</a></li>
+                                <li class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <i class="fa fa-bell" style=" color: #fff;"></i>
+                                <span class="label label-primary">8</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <a href="#" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                            <span class="float-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <a href="#" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                            <span class="float-right text-muted small">12 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <a href="#" class="dropdown-item">
+                                        <div>
+                                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                            <span class="float-right text-muted small">4 minutes ago</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="dropdown-divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a href="#" class="dropdown-item">
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="fh-breadcrumb">
+                <!---------------------------LINK LIST------------------------------->
+                <!------------------------------------------------------------------->
+                <!------------------------------------------------------------------->
+                <div class="fh-column col-lg-3 col-md-4 col-sm-4 nopadding">
+                    <div class="full-height-scroll">
+                        <ul class="list-group elements-list">
+                            <li class="list-group-item">
+                                <a class="nav-link active show" data-toggle="tab" href="#tab-detail">
+                                    <div>
+                                        <small class="float-right text-muted"> 12.01.2019</small>
+                                        <div class="link-list-title">
+                                            <strong>MISA JSC</strong>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-xs">
+                                        <p class="link-list-encode">http://misa.vn/<span class="link-encode">misajsc</span></p>
+                                        <p class="m-b-none">
+                                            <i class="fa fa-map-marker"></i> Việt Nam
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="nav-link " data-toggle="tab" href="#tab-2">
+                                    <div>
+                                        <small class="float-right text-muted"> 12.01.2019</small>
+                                        <div class="link-list-title">
+                                            <strong>MISA Tuyển dụng</strong>
+                                        </div>
+                                    </div>
+                                    <div class="m-t-xs">
+                                        <p class="link-list-encode">http://misa.vn/<span class="link-encode">8GOPeS</span></p>
+                                        <p class="m-b-none">
+                                            <i class="fa fa-map-marker"></i> Việt Nam
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!--------------------------LINK DETAIL------------------------------>
+                <!------------------------------------------------------------------->
+                <!------------------------------------------------------------------->
+                <div class="full-height">
+                    <div class="full-height-scroll white-bg border-left">
+                        <div class="element-detail-box">
+                            <div class="tab-content">
+                                <div id="tab-detail" class="tab-pane active show">
+                                    <div class="link-info">
+                                        <!-- Ngày tháng hiển thị -->
+                                        <div class="text-muted">
+                                            <i class="fa fa-clock-o"></i> Thứ 4, 12 tháng 12 2019, 3:25 SA
+                                        </div>
+                                        <h1>MISA JSC</h1>
+                                        <h5>http://www.misa.com.vn/cong-ty/gioi-thieu</h5>
+                                        <div class="short-link">
+                                            <div class="float-right">
+                                                <div class="tooltip-misa tooltip-demo">
+                                                    <div class="tooltip-demo-item" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Sao chép">
+                                                        <button class="btn btn-white btn-xs btn-copy btn-sl-misa"><i class="fa fa-copy"></i> Sao chép</button>
+                                                    </div>
+                                                    <div class="tooltip-demo-item" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Chỉnh sửa đường dẫn">
+                                                        <button class="btn btn-white btn-xs btn-sl-misa" data-toggle="modal" data-target="#editShortLink"><i class="fa fa-edit"></i> Sửa</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-link" id="text">
+                                                <a href="http://misa.vn/misajsc" target="_blank">http://misa.vn/<span class="link-encode">misajsc</span></a>
+                                            </div>
+                                            <div class="text-link" style="display: none">
+                                                <a href="http://misa.vn/misajsc" target="_blank">http://misa.vn/<span class="link-encode">8GOPeS</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="link-statistic animated fadeInRight">
+                                        <div class="row">
+                                            <div class="col-lg-9">
+                                                <div class="ibox ">
+                                                    <div class="ibox-title">
+                                                        <h5>THỐNG KÊ</h5>
+                                                    </div>
+                                                    <div class="ibox-content nopadding">
+                                                        <div>
+                                                            <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                                            <canvas class="barChart" height="164" width="352" style="display: block; width: 352px; height: 164px;"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="ibox-title">
+                                                    <h5>MÃ QR</h5>
+                                                </div>
+                                                <div class="ibox-content" style="padding-top: 30%">
+                                                    <div class="d-flex align-self-center justify-content-center" id="qrcode" title="http://misa.vn/misajsc">
+                                                        <!--<img src="/Library/img/ReSOz.png" />-->
+                                                    </div>
+                                                    <br>
+                                                    <div class="tooltip-misa tooltip-demo d-flex align-self-center justify-content-center" style="margin-top:4px;">
+                                                        <div class="tooltip-demo-item d-flex justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Chia sẻ">
+                                                            <button class="btn btn-white btn-xs btn-sl-misa"><i class="fa fa-share"></i> Chia sẻ</button>
+                                                        </div>
+                                                        <!--<div class="tooltip-demo-item d-flex justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa QR Code">
+        <button class="btn btn-white btn-xs btn-sl-misa" data-toggle="modal" data-target="#editShortLink"><i class="fa fa-edit"></i> Sửa</button>
+    </div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-2" class="tab-pane ">
+                                    <div class="link-info">
+                                        <!-- Ngày tháng hiển thị -->
+                                        <div class=" text-muted">
+                                            <i class="fa fa-clock-o"></i> Thứ 4, 12 tháng 12 2019, 3:25 pm
+                                        </div>
+                                        <h1>
+                                            MISA Tuyển dụng
+                                        </h1>
+                                        <h5>
+                                            http://www.misa.com.vn/tin-tuc/nhom-tin/tm/1581/clid/122-123-124-125-126/misa-tuyen-dung
+                                        </h5>
+                                        <div class="short-link">
+                                            <div class="float-right">
+                                                <div class="tooltip-misa tooltip-demo">
+                                                    <div class="tooltip-demo-item" data-toggle="tooltip" data-placement="bottom" title="Sao chép">
+                                                        <button class="btn btn-white btn-xs btn-copy btn-sl-misa"><i class="fa fa-copy"></i> Sao chép</button>
+                                                    </div>
+                                                    <div class="tooltip-demo-item" data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa đường dẫn">
+                                                        <button class="btn btn-white btn-xs btn-sl-misa " data-toggle="modal" data-target="#editShortLink"><i class="fa fa-edit"></i> Sửa</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-link">
+                                                <a href="http://misa.vn/8GOPeS" target="_blank">http://misa.vn/<span class="link-encode">8GOPeS</span></a>
+                                            </div>
+                                            <div class="text-link" style="display:none;">
+                                                <a href="http://misa.vn/8GOPeS" target="_blank">http://misa.vn/<span class="link-encode">8GOPeS</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="link-statistic animated fadeInRight">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="ibox">
+                                                    <div class="ibox-title">
+                                                        <h5>
+                                                            Line Chart Example
+                                                            <small>With custom colors.</small>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="ibox-content">
+                                                        <div>
+                                                            <canvas class="lineChart" height="140"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="ibox ">
+                                                    <div class="ibox-title">
+                                                        <h5>Bar Chart Example</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div>
+                                                        <canvas class="barChart" height="140"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <!-- Thêm link -->
+            <div class="modal right fade" id="addShortLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">TẠO MỚI MISALINK</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span style="color: #fff;">×</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body" style="height: calc(100% - 154px);">
+
+                            <h4 class="font-bold">Tên miền</h4>
+                            <div class="cover-domain">
+                                <input type="text" id="domain-name" value="misa.vn" readonly>
+                                <button id="option-domain" class="domain-btn d-flex justify-content-center align-items-center dropdown-toggle" tabindex="-1">
+                                    <!--data-toggle="dropdown"-->
+                                </button>
+                                <!--<ul class="dropdown-menu dropdown-menu-right" style="width: 100%;">
+                                    <li><a href="#" class="dropdown-item">mi.sa</a></li>
+                                    <li><a href="#" class="dropdown-item">misa.vn</a></li>
+                                    <li><a href="#" class="dropdown-item">misa.com.vn</a></li>
+                                </ul>-->
+                            </div>
+                            <h4 class="font-bold" style="color: black;">URL gốc</h4>
+                            <textarea id="original-url" class="on-focus"></textarea>
+                            <p style="text-align: center;"><i><b>Mẹo: </b>Nhấn <b>M</b> để tạo link rút gọn</i></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">RÚT GỌN LINK</button>
+                        </div>
+                    </div><!-- modal-content -->
+                </div><!-- modal-dialog -->
+            </div><!-- modal -->
+            <!-- Chính sửa link -->
+            <div class="modal right fade" id="editShortLink" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="z-index:347!important;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">Chỉnh sửa MISALINK</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span style="color: #fff;">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="short-link">
+                                <div class="float-right">
+                                    <div class="tooltip-misa tooltip-demo">
+                                        <div class="tooltip-demo-item" data-toggle="tooltip" data-placement="bottom" title="Sao chép">
+                                            <button class="btn btn-white btn-xs btn-copy-edit btn-sl-misa"><i class="fa fa-copy"></i> Sao chép</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-link">
+                                    <a href="http://misa.vn/8GOPeS" target="_blank">http://misa.vn/<span class="link-encode">8GOPeS</span></a>
+                                </div>
+                                <div class="text-link" style="display:none;">
+                                    <a href="http://misa.vn/8GOPeS" target="_blank">http://misa.vn/<span class="link-encode">8GOPeS</span></a>
+                                </div>
+                            </div>
+                            <div class="short-link-edit">
+                                <h4 class="font-bold" style="color: black;">Tiêu đề</h4>
+                                <textarea class="short-link-title edit-item">Thiết kế hệ thống URL Shortening giống Bit.ly chịu tải 6 tỷ click 1 tháng | Tech Talk</textarea>
+                                <h4 class="font-bold" style="color: black;">Đường dẫn</h4>
+                                <div class="input-field--CUSTOM">
+                                    <div id="custom-link" class="input-field--input-wrapper d-flex" style="width: 100%;min-height: 31px;outline: 0;border: 1px solid #e5e6e7;border-radius: 5px;resize: none;overflow: hidden;padding: 10px;margin-bottom: 10px;font-size: 14px;">
+                                        <span id="domain" style="margin-top:1px;">misa.vn/</span>
+                                        <input type="text" class="input-field--input link-shorted" autocomplete="false" tabindex="0" value="8GOPeS" style="border: 0;outline: none;" />
+                                    </div>
+                                    <p style="text-align: center;"><i><b>Mẹo: </b>Nhấn <b>Ctrl + E</b> để chỉnh sửa link rút gọn</i></p>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 24%;">
+                                <h4 class="font-bold" style="color: black;">Mã QR</h4>
+                                <a data-original-title="Mẫu QR Code" data-animation="false" data-easein="slideLeftBigIn" href="#" rel="popover" data-placement="left" aria-describedby="info" class=" d-flex justify-content-center">
+                                    <div class="custom-qrcode" style="width:200px;height:200px">
+                                        <div id="custom-qrcode"></div>
+                                    </div>
+                                </a>
+                                <!--<p style="text-align: center;margin-top:4px">
+                                    <i>Nhấp chuột vào mã QR để chỉnh sửa mã QR</i>
+
+                                </p>-->
+                            </div>
+
+                            <!--<div id="custom-logo" style="margin-top:2px;position:relative;" class="d-flex justify-content-center">
+                                <button class="btn btn-primary"><i class="fa fa-folder"></i> Chọn logo</button>
+                                <input type="file" id="browser-file" style="opacity:0;position:absolute;top:0;left: 37%;" />
+                            </div>-->
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">LƯU LẠI</button>
+                        </div>
+                    </div><!-- modal-content -->
+                </div><!-- modal-dialog -->
+            </div><!-- modal -->
+
+            <div class="footer">
+                <div class="float-right"><strong>MISA JSC</strong></div>
+                <div>
+                    <strong>Copyright</strong> MISA R&amp;D © 2019
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="/Library/js/jquery-3.1.1.min.js"></script>
+    <script src="/Library/js/easy.qrcode.js"></script>
+    <script src="/Library/js/popper.min.js"></script>
+    <script src="/Library/js/bootstrap.js"></script>
+    <script src="/Library/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/Library/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="/Library/js/inspinia.js"></script>
+    <script src="/Library/js/plugins/pace/pace.min.js"></script>
+    <script src="/Scripts/short-link.js"></script>
+
+    <!-- Chart -->
+    <script src="/Library/js/plugins/chartJs/Chart.min.js"></script>
+    <script src="/Library/js/demo/chartjs-demo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿/*Chỉnh sửa link*/
+#editShortLink .modal-dialog {
+    margin: 0 0 0 auto;
+    max-width: 362px;
+    height: 100%;
+}
+
+#editShortLink .modal-content {
+    border-radius: 0;
+    border: 0;
+    height: 100%;
+}
+
+#editShortLink .modal-header {
+    background-color: #2f4050;
+    border-radius: 0;
+    color: #fff;
+    padding: 24.5px;
+}
+
+    #editShortLink .modal-header .modal-title {
+        margin-top: 0;
+    }
+
+#editShortLink .modal-footer {
+    padding: 22px;
+}
+
+    #editShortLink .modal-footer button {
+        font-size: 14px;
+        font-weight: 600;
+        width: 100%;
+    }
+
+.btn-secondary {
+    color: #fff;
+    background-color: #2f4050;
+    border-color: #2f4050;
+}
+
+#editShortLink .short-link {
+    padding-bottom: 33px;
+}
+
+
+/*Input*/
+#editShortLink .short-link-edit .edit-item {
+    width: 100%;
+    min-height: 90px;
+    outline: 0;
+    border: 1px solid #e5e6e7;
+    border-radius: 5px;
+    resize: none;
+    overflow: hidden;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#editShortLink .short-link-edit .short-link-encode {
+    min-height: 43px;
+}
+
+#editShortLink .short-link-edit #custom-link:focus-within {
+    border: 1px solid #1ab394!important;
+}
+
+

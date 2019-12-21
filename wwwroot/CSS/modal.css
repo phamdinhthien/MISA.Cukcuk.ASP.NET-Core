@@ -1,0 +1,123 @@
+﻿a {
+    outline-color: #1ab394;
+}
+
+/*Modal*/
+
+/*fade in*/
+.modal.fade:not(.show).right .modal-dialog {
+    -webkit-transform: translate3d(25%, 0, 0);
+    transform: translate3d(25%, 0, 0);
+}
+
+
+/*css*/
+#addShortLink .modal-dialog {
+    margin: 0 0 0 auto;
+    max-width: 362px;
+    height: 100%;
+}
+
+#addShortLink .modal-content {
+    border-radius: 0;
+    border: 0;
+    height: 100%;
+}
+
+#addShortLink .modal-body .cover-domain {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+    #addShortLink .modal-body .cover-domain .dropdown-item {
+        font-size: 14px;
+    }
+
+    #addShortLink .modal-body .cover-domain #domain-name {
+        border: 1px solid #e5e6e7;
+        border-right: 0;
+        border-radius: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-size: 14px;
+        width: 100%;
+        outline: 0;
+        padding-left: 10px;
+    }
+
+    #addShortLink .modal-body .cover-domain button:focus i {
+        transform: rotate(-180deg);
+    }
+
+    #addShortLink .modal-body .cover-domain .domain-btn {
+        background-color: transparent;
+        border: 1px solid #e5e6e7;
+        border-left: 0;
+        cursor: pointer;
+        width: 30px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    #addShortLink .modal-body .cover-domain:focus-within .domain-btn {
+        border: 1px solid #1ab394;
+        border-left: 0;
+    }
+
+    #addShortLink .modal-body .cover-domain:focus-within #domain-name {
+        border: 1px solid #1ab394;
+        border-right: 0;
+    }
+
+#addShortLink .modal-body #original-url {
+    width: 100%;
+    min-height: 90px;
+    outline: 0;
+    border: 1px solid #e5e6e7;
+    border-radius: 5px;
+    resize: none;
+    overflow: hidden;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    max-height: calc(100% - 142px);
+}
+
+    #addShortLink .modal-body #original-url:focus {
+        border: 1px solid #1ab394!important;
+    }
+
+#addShortLink .modal-header {
+    background-color: #2f4050;
+    border-radius: 0;
+    color: #fff;
+    padding: 24.5px;
+}
+
+    #addShortLink .modal-header .modal-title {
+        margin-top: 0;
+    }
+
+#addShortLink .modal-footer {
+    padding: 22px;
+}
+
+    #addShortLink .modal-footer button {
+        font-size: 14px;
+        font-weight: 600;
+        width: 100%;
+    }
+
+.btn-secondary {
+    color: #fff;
+    background-color: #2f4050;
+    border-color: #2f4050;
+}
+
+.dropdown-toggle::after {
+    color: #979fa7;
+}

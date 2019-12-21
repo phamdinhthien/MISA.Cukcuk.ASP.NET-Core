@@ -1,0 +1,118 @@
+﻿/*Short-link*/
+.link-list-title {
+    width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.link-list-encode {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ff8500;
+    font-weight: 600;
+}
+
+.link-info {
+    height: 100%;
+    border-bottom: 1px solid #d3d4d7;
+}
+
+.link-info h1{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.short-link {
+    color: forestgreen;
+    margin-top: 12px;
+    height: 23px;
+    margin-bottom: 27px;
+    display: block;
+    position: relative;
+    width: 300px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+    .short-link .text-link {
+        position: absolute;
+        cursor: pointer;
+        color: #ff8500;
+        display: block;
+        height: 25px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+        .short-link .text-link a {
+            font-size: 14px;
+            color: #ff8500;
+        }
+
+.copied {
+    animation: 1000ms ease 100ms 1 normal forwards running copy-animation;
+    display: block !important;
+}
+
+@-webkit-keyframes copy-animation {
+    0.00% {
+        bottom: 0;
+        opacity: 1
+    }
+
+    99% {
+        bottom: 1.5rem;
+        opacity: 0
+    }
+
+    100% {
+        bottom: 0
+    }
+}
+
+.short-link .tooltip-misa {
+    display: flex;
+}
+
+/*CSS cho các button sao chép và chỉnh sửa*/
+.btn-sl-misa {
+    color: #ff8500 !important;
+    background: white;
+    border: 1px solid #ff8500 !important;
+    margin-right: 4px;
+}
+
+.link-encode {
+    font-weight: 900;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+#qrcode img, #custom-qrcode img {
+    width: 100%;
+}
+
+.ibox-title {
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.navbar-header img {
+    width: 43px;
+    margin: 15px 10px 15px 25px;
+    background-color: #fff;
+}
+
+.navbar-header h2 {
+    margin: 0;
+    color: #ffffff;
+}
+
