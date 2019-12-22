@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     link = new Link();
+
 });
 
 class Link {
@@ -20,9 +21,33 @@ class Link {
         $(document).on('mouseleave', '.popover-content', this.hideModal);
 
         this.clearInputOnClose();
+
+        if (document.body.offsetWidth < 576) {
+            this.handleClickListGroupItem();
+        }
     }
 
+    /**
+     * xử lý click vào các item link rút gọn khi web ở chế độ mobile
+     */
 
+    handleClickListGroupItem() {
+        var newTabContent = $('<div></div>');
+        var tabContent = $('.tab-content');
+        var tabContentChild = tabContent.children();
+        $('.list-group-item').attr('data-toggle', 'modal');
+        for (let i = 0; i < tabContentChild.length; i++) {
+            $('.list-group-item').eq(i).attr('data-target', '#' + tabContentChild[i].id);
+            var tabDetail = $('#' + tabContentChild[i].id);
+            var modalHeader = $("<div class='modal-header'><button type='button' class='close' data-dismiss='modal'>&times;</button></div>")
+            var modalBody = $("<div class='modal-body'></div>").html(tabDetail);
+            var modalContent = $("<div class='modal-content'></div>").append(modalHeader).append(modalBody);
+            var modalDialog = $("<div class='modal-dialog' style='margin-right: 0'></div>").html(modalContent);
+            var modalNode = $("<div class='modal right fade' id='" + tabContentChild[i].id + "'></div>").html(modalDialog);
+            newTabContent.append(modalNode);
+        }
+        tabContent.html(newTabContent);
+    }
 
     /**
     * Focus vào trường bắt buộc trong modal

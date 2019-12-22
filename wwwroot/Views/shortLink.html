@@ -9,15 +9,15 @@
     <!------------------------IMPORT CSS------------------------------------>
     <!---------------------------------------------------------------------->
     <!---------------------------------------------------------------------->
-    <link href="/Library/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/Library/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/Library/css/animate.css" rel="stylesheet">
-    <link href="/Library/css/plugins/codemirror/codemirror.css" rel="stylesheet">
-    <link href="/Library/css/plugins/codemirror/ambiance.css" rel="stylesheet">
-    <link href="/Library/css/style.css" rel="stylesheet">
-    <link href="/CSS/edit-modal.css" rel="stylesheet" />
-    <link href="/CSS/modal.css" rel="stylesheet" />
-    <link href="/CSS/short-link.css" rel="stylesheet" />
+    <link href="../Library/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Library/font-awesome../CSS/font-awesome.css" rel="stylesheet">
+    <link href="../Library/CSS/animate.css" rel="stylesheet">
+    <link href="../Library/CSS/plugins/codemirror/codemirror.css" rel="stylesheet">
+    <link href="../Library/CSS/plugins/codemirror/ambiance.css" rel="stylesheet">
+    <link href="../Library/CSS/style.css" rel="stylesheet">
+    <link href="../CSS/edit-modal.css" rel="stylesheet" />
+    <link href="../CSS/modal.css" rel="stylesheet" />
+    <link href="../CSS/short-link.css" rel="stylesheet" />
     <!------------------------END IMPORT------------------------------------>
 </head>
 
@@ -30,9 +30,7 @@
             <div class="row border-bottom">
                 <nav class="navbar navbar-static-top" role="navigation">
                     <div class="navbar-header d-flex align-items-center">
-
-
-                        <img alt="image" class="rounded-circle" src="/Library/img/logo.png">
+                        <img alt="image" class="rounded-circle" src="../Library/img/logo.png">
                         <h2 class="font-bold">
                             MISA SHORTLINK
                         </h2>
@@ -44,10 +42,9 @@
                             </button>
                         </li>
 
-
                         <li class="dropdown" style="margin: 0 10px 0 18px;">
                             <a class="d-flex align-items-center dropdown-toggle count-info" data-toggle="dropdown" href="#" aria-expanded="false" style="padding: 0;line-height: 50px;">
-                                <img alt="image" class="rounded-circle" src="/Library/img/avt-user-default.png" style="width: 34px;margin: 6px;background-color: #fff;border: 1px solid #fff;">
+                                <img alt="image" class="rounded-circle" src="../Library/img/avt-user-default.png" style="width: 34px;margin: 6px;background-color: #fff;border: 1px solid #fff;">
                                 <span class="font-bold" style="color: #fff;"> MISA Account</span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs" x-placement="bottom-start" style="position: absolute;top: 56px;left: 0px;will-change: top, left;">
@@ -113,7 +110,7 @@
                     <div class="full-height-scroll">
                         <ul class="list-group elements-list">
                             <li class="list-group-item">
-                                <a class="nav-link active show" data-toggle="tab" href="#tab-detail">
+                                <a class="nav-link active show" data-toggle="tab" href="#tab-1">
                                     <div>
                                         <small class="float-right text-muted"> 12.01.2019</small>
                                         <div class="link-list-title">
@@ -156,7 +153,7 @@
                     <div class="full-height-scroll white-bg border-left">
                         <div class="element-detail-box">
                             <div class="tab-content">
-                                <div id="tab-detail" class="tab-pane active show">
+                                <div id="tab-1" class="tab-pane active show">
                                     <div class="link-info">
                                         <!-- Ngày tháng hiển thị -->
                                         <div class="text-muted">
@@ -204,12 +201,32 @@
                                                 </div>
                                                 <div class="ibox-content" style="padding-top: 30%">
                                                     <div class="d-flex align-self-center justify-content-center" id="qrcode" title="http://misa.vn/misajsc">
-                                                        <!--<img src="/Library/img/ReSOz.png" />-->
+                                                        <!--<img src="../Library/img/ReSOz.png" />-->
                                                     </div>
                                                     <br>
                                                     <div class="tooltip-misa tooltip-demo d-flex align-self-center justify-content-center" style="margin-top:4px;">
                                                         <div class="tooltip-demo-item d-flex justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Chia sẻ">
-                                                            <button class="btn btn-white btn-xs btn-sl-misa"><i class="fa fa-share"></i> Chia sẻ</button>
+                                                            <button class="btn btn-white btn-xs btn-sl-misa" data-toggle="modal" data-target="#share-qr"><i class="fa fa-share"></i> Chia sẻ</button>
+                                                            <div class="modal fade right" tabindex="-1" role="dialog" id="share-qr">
+                                                                <div class="modal-dialog" role="document">
+                                                                  <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                      <h5 class="modal-title">Chia sẻ</h5>
+                                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                      </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="col-lg-3 mb-2">
+                                                                            <button class="sharer btn btn-primary btn-lg" data-sharer="email" data-title="Awesome Url" data-url="http://www.cssscript.com/" data-subject="Hey! Check out that URL" data-to=""><i class="fa fa-envelope"></i> Share via Email</button>
+                                                                         </div>
+                                                                         <div class="col-lg-3">
+                                                                            <button class="sharer btn btn-primary btn-lg" data-sharer="facebook" data-url="http://www.cssscript.com/"><i class="fa fa-facebook"></i> Share on Facebook</button>
+                                                                          </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
                                                         </div>
                                                         <!--<div class="tooltip-demo-item d-flex justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Chỉnh sửa QR Code">
         <button class="btn btn-white btn-xs btn-sl-misa" data-toggle="modal" data-target="#editShortLink"><i class="fa fa-edit"></i> Sửa</button>
@@ -399,21 +416,22 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="/Library/js/jquery-3.1.1.min.js"></script>
-    <script src="/Library/js/easy.qrcode.js"></script>
-    <script src="/Library/js/popper.min.js"></script>
-    <script src="/Library/js/bootstrap.js"></script>
-    <script src="/Library/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="/Library/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../Library/js/jquery-3.1.1.min.js"></script>
+    <script src="../Library/js/easy.qrcode.js"></script>
+    <script src="../Library/js/popper.min.js"></script>
+    <script src="../Library/js/bootstrap.js"></script>
+    <script src="../Library/js/sharer.min.js"></script>
+    <script src="../Library/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../Library/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="/Library/js/inspinia.js"></script>
-    <script src="/Library/js/plugins/pace/pace.min.js"></script>
-    <script src="/Scripts/short-link.js"></script>
+    <script src="../Library/js/inspinia.js"></script>
+    <script src="../Library/js/plugins/pace/pace.min.js"></script>
+    <script src="../Scripts/short-link.js"></script>
 
     <!-- Chart -->
-    <script src="/Library/js/plugins/chartJs/Chart.min.js"></script>
-    <script src="/Library/js/demo/chartjs-demo.js"></script>
+    <script src="../Library/js/plugins/chartJs/Chart.min.js"></script>
+    <script src="../Library/js/demo/chartjs-demo.js"></script>
 
 </body>
 </html>
